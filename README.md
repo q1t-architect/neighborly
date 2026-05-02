@@ -94,3 +94,4 @@ See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
 | `npm run typecheck` | TypeScript check (no emit) |
 | `npm run format` | Format with Prettier |
 | `npm run format:check` | Check Prettier formatting |
+# Deploy trigger 2026-05-02T23:24:52Z
