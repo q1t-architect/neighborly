@@ -1,0 +1,39 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["**/lib/*.server"],
+            "message": "Server-only modules cannot be imported from client code. Use Server Components or Server Actions instead."
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.server.ts", "**/*.server.tsx", "**/app/**/page.tsx", "**/app/**/layout.tsx"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["**/lib/*.client"],
+                "message": "Client-only modules cannot be imported in Server Components."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
